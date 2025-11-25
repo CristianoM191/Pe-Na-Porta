@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - HelioOne</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .carousel-container {
+            scroll-behavior: smooth;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+        }
+        .team-photo {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            padding: 4px;
+            border-radius: 20px;
+        }
+        .menu-mobile {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    <!-- HEADER PADRONIZADO -->
+    <header class="fixed w-full top-0 z-50">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-blue-800/80"></div>
+        
+        <nav class="relative z-10 container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-2xl">
+                        <span class="text-blue-600 font-bold text-xl">H1</span>
+                    </div>
+                    <span class="text-white text-2xl font-bold drop-shadow-lg">HelioOne</span>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Início</a>
+                    <a href="sobre.html" class="text-white border-b-2 border-cyan-300 hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Sobre Nós</a>
+                    <a href="servicos.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Serviços</a>
+                    <a href="contato.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Contato</a>
+                    <a href="login.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área do Cliente</a>
+                </div>
+
+                <!-- Botão Agendar -->
+                <div class="hidden md:block">
+                    <a
+                    href="agendamento.html"
+                    class="bg-white text-blue-600 px-8 py-3 rounded-xl hover:bg-cyan-50 transition duration-300 font-semibold shadow-2xl hover:shadow-cyan-500/25 transform hover:scale-105">
+                        Agendar Consulta
+                </a>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <button id="mobileMenuButton" class="md:hidden text-white text-2xl bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="menu-mobile md:hidden absolute top-24 left-0 w-full bg-blue-800/95 backdrop-blur-lg border-t border-blue-600/30 py-6 px-6">
+                <div class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Início</a>
+                    <a href="sobre.html" class="text-cyan-300 text-lg font-semibold border-b border-blue-600/30 pb-3">Sobre Nós</a>
+                    <a href="servicos.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Serviços</a>
+                    <a href="contato.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Contato</a>
+                    <a href="login.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área do Cliente</a>
+                    <a
+                    href="agendamento.html"
+                    class="bg-white text-blue-600 px-6 py-3 rounded-xl hover:bg-cyan-50 transition duration-300 font-semibold mt-4">
+                        Agendar Consulta
+                </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pt-32 pb-20">
+        <!-- Hero Section Sobre Nós -->
+        <section class="py-16 bg-gradient-to-br from-blue-50 via-cyan-50 to-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Conheça a <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">HelioOne</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Mais que uma empresa de saúde, uma missão inspirada no legado de amor e cuidado.
+                </p>
+            </div>
+        </section>
+
+        <!-- Carrossel de História -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                    Nossa <span class="text-blue-600">História</span>
+                </h2>
+                
+                <div class="max-w-4xl mx-auto relative">
+                    <div class="carousel-container flex overflow-hidden rounded-2xl shadow-2xl">
+                        <div class="carousel-slide bg-gradient-to-br from-blue-600 to-cyan-500 text-white p-8 md:p-12">
+                            <div class="max-w-2xl mx-auto text-center">
+                                <div class="text-6xl mb-6">❤️</div>
+                                <h3 class="text-2xl md:text-3xl font-bold mb-6">O Legado do Hélio</h3>
+                                <p class="text-lg md:text-xl leading-relaxed mb-6">
+                                    Após nosso avô Hélio falecer aos 88 anos, descobrimos que a causa de sua morte não foi sua condição de saúde, mas a negligência daqueles que deveriam cuidar dele. Ele foi deixado sozinho em um hospital público, sem a atenção médica que merecia.
+                                </p>
+                                <p class="text-lg md:text-xl leading-relaxed">
+                                    Sua história nos inspirou a criar a HelioOne - para garantir que nenhum idoso precise buscar ajuda sozinho e que cada vida seja tratada com a dignidade que merece.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Setas do Carrossel -->
+                    <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 text-blue-600 w-12 h-12 rounded-full shadow-2xl hover:bg-white transition duration-300 flex items-center justify-center">
+                        ←
+                    </button>
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 text-blue-600 w-12 h-12 rounded-full shadow-2xl hover:bg-white transition duration-300 flex items-center justify-center">
+                        →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção da Equipe -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                    Nossa <span class="text-blue-600">Equipe</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <!-- Arthur -->
+                    <div class="team-card bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-500">
+                        <div class="team-photo">
+                            <div class="bg-white rounded-2xl p-8 text-center">
+                                <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-2xl mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+                                    [A]
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Arthur Uzum</h3>
+                                <p class="text-blue-600 font-semibold mb-4">Co-fundador & Diretor de Tecnologia</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Responsável pela inovação tecnológica e operação da HelioOne. Garante que nossa plataforma seja acessível e eficiente para todos os usuários.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cristiano -->
+                    <div class="team-card bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-500">
+                        <div class="team-photo">
+                            <div class="bg-white rounded-2xl p-8 text-center">
+                                <div class="w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-2xl mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+                                    [C]
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Cristiano Thiago</h3>
+                                <p class="text-blue-600 font-semibold mb-4">Co-fundador & Diretor Médico</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Supervisiona a qualidade dos serviços médicos e a excelência no atendimento. Comprometido com o cuidado humanizado e personalizado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Missão, Visão e Valores -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                    Nossos <span class="text-blue-600">Pilares</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Missão -->
+                    <div class="bg-gradient-to-br from-blue-500 to-cyan-400 text-white p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold mb-4">Missão</h3>
+                        <p class="leading-relaxed">
+                            Garantir que histórias como a do nosso avô Hélio não se repitam, oferecendo cuidado médico domiciliar com excelência, dignidade e autonomia.
+                        </p>
+                    </div>
+
+                    <!-- Visão -->
+                    <div class="bg-gradient-to-br from-cyan-500 to-blue-400 text-white p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500">
+                        <div class="text-4xl mb-4">👁️</div>
+                        <h3 class="text-xl font-bold mb-4">Visão</h3>
+                        <p class="leading-relaxed">
+                            Ser referência em cuidado médico domiciliar, transformando a experiência do envelhecimento através da tecnologia e humanização.
+                        </p>
+                    </div>
+
+                    <!-- Valores -->
+                    <div class="bg-gradient-to-br from-blue-600 to-cyan-500 text-white p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition duration-500">
+                        <div class="text-4xl mb-4">💎</div>
+                        <h3 class="text-xl font-bold mb-4">Valores</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Respeito e dignidade</li>
+                            <li>• Autonomia do idoso</li>
+                            <li>• Cuidado humanizado</li>
+                            <li>• Excelência médica</li>
+                            <li>• Inovação tecnológica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER PADRONIZADO -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <p class="text-sm text-gray-300">Hello one 😊 todos os direitos reservados</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-cyan-300 text-sm">helihealth@gmail.com</p>
+                    <p class="text-cyan-300 text-sm">📍 (11) 99492-0521</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-blue-600 font-bold text-sm">H1</span>
+                    </div>
+                    <span class="text-white text-sm font-semibold">HelioOne</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Menu Mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // Fechar menu ao clicar em um link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

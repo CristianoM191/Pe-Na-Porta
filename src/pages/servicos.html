@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços Premium - HelioOne</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .premium-badge {
+            background: linear-gradient(135deg, #FFD700, #FFED4E);
+            color: #8B7500;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .menu-mobile {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white">
+    <!-- HEADER PADRONIZADO -->
+    <header class="fixed w-full top-0 z-50">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-blue-800/80"></div>
+        
+        <nav class="relative z-10 container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-2xl">
+                        <span class="text-blue-600 font-bold text-xl">H1</span>
+                    </div>
+                    <span class="text-white text-2xl font-bold drop-shadow-lg">HelioOne</span>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Início</a>
+                    <a href="sobre.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Sobre Nós</a>
+                    <a href="servicos.html" class="text-white border-b-2 border-cyan-300 hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Serviços</a>
+                    <a href="contato.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Contato</a>
+                    <a href="login.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área do Cliente</a>
+                </div>
+
+                <!-- Botão Agendar -->
+                <div class="hidden md:block">
+                    <a
+                        href="agendamento.html"
+                        class="bg-white text-blue-600 px-8 py-3 rounded-xl hover:bg-cyan-50 transition duration-300 font-semibold shadow-2xl hover:shadow-cyan-500/25 transform hover:scale-105">
+                        Agendar Consulta
+                   </a>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <button id="mobileMenuButton" class="md:hidden text-white text-2xl bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="menu-mobile md:hidden absolute top-24 left-0 w-full bg-blue-800/95 backdrop-blur-lg border-t border-blue-600/30 py-6 px-6">
+                <div class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Início</a>
+                    <a href="sobre.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Sobre Nós</a>
+                    <a href="servicos.html" class="text-cyan-300 text-lg font-semibold border-b border-blue-600/30 pb-3">Serviços</a>
+                    <a href="contato.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Contato</a>
+                    <a href="login.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área do Cliente</a>
+                    <a
+                       href="agendamento.html"                   
+                       class="bg-white text-blue-600 px-6 py-3 rounded-xl hover:bg-cyan-50 transition duration-300 font-semibold mt-4">
+                        Agendar Consulta
+                   </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pt-32 pb-20">
+        <!-- Hero Section Serviços -->
+        <section class="py-16 bg-gradient-to-br from-blue-50 via-cyan-50 to-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="premium-badge inline-block px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    SERVIÇOS PREMIUM
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Cuidado Médico de <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Alto Padrão</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Atendimento domiciliar exclusivo com tecnologia de ponta e os melhores especialistas de São Paulo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Serviços Agrupados por Categoria -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <!-- Consultas Médicas -->
+                <div class="mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                        <span class="text-blue-600">Consultas Médicas</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Clínico Geral -->
+                        <div class="service-card bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                            <div class="text-4xl mb-4 text-blue-600">👨‍⚕️</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Clínico Geral</h3>
+                            <p class="text-gray-600 mb-4">Avaliação completa de saúde e orientação médica personalizada</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">R$ 600</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                    Agendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Cardiologista -->
+                        <div class="service-card bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                            <div class="text-4xl mb-4 text-red-500">❤️</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Cardiologista</h3>
+                            <p class="text-gray-600 mb-4">Cuidado especializado em saúde cardiovascular e prevenção</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">R$ 900</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                    Agendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Ortopedista -->
+                        <div class="service-card bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                            <div class="text-4xl mb-4 text-green-600">🦴</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ortopedista</h3>
+                            <p class="text-gray-600 mb-4">Tratamento de condições musculoesqueléticas e reabilitação</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">R$ 900</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                    Agendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terapias e Reabilitação -->
+                <div class="mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                        <span class="text-cyan-600">Terapias e Reabilitação</span>
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <!-- Fisioterapia -->
+                        <div class="service-card bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                            <div class="text-4xl mb-4 text-purple-600">🚶‍♂️</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Fisioterapia</h3>
+                            <p class="text-gray-600 mb-4">Sessões personalizadas para reabilitação e qualidade de vida</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">R$ 550/sessão</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                    Agendar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Enfermagem -->
+                        <div class="service-card bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+                            <div class="text-4xl mb-4 text-pink-600">💉</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Enfermagem</h3>
+                            <p class="text-gray-600 mb-4">Cuidados especializados, medicação e procedimentos</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-2xl font-bold text-blue-600">R$ 400/visita</span>
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                    Agendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acompanhamento Premium -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                        <span class="text-yellow-600">Acompanhamento Premium</span>
+                    </h2>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="service-card bg-gradient-to-br from-yellow-400 to-orange-400 text-white rounded-2xl shadow-2xl p-8 text-center">
+                            <div class="premium-badge inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 text-yellow-800">
+                                MAIS PROCURADO
+                            </div>
+                            <div class="text-4xl mb-4">⭐</div>
+                            <h3 class="text-2xl font-bold mb-4">Acompanhamento Mensal</h3>
+                            <p class="mb-6 leading-relaxed">
+                                Pacote completo com consultas regulares, monitoramento contínuo e suporte 24/7 para tranquilidade total.
+                            </p>
+                            <div class="flex justify-center items-baseline space-x-2 mb-6">
+                                <span class="text-4xl font-bold">R$ 1.200</span>
+                                <span class="text-lg">/mês</span>
+                            </div>
+                            <button class="bg-white text-yellow-600 px-8 py-3 rounded-xl hover:bg-yellow-50 transition duration-300 font-semibold shadow-lg">
+                                Contratar Plano
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                    Como <span class="text-blue-600">Funciona</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <!-- Passo 1 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            1
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Agendamento</h3>
+                        <p class="text-gray-600 text-sm">Online ou por telefone, rápido e simples</p>
+                    </div>
+
+                    <!-- Passo 2 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            2
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Profissionais Selecionados</h3>
+                        <p class="text-gray-600 text-sm">Especialistas renomados da sua região</p>
+                    </div>
+
+                    <!-- Passo 3 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            3
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Atendimento Domiciliar</h3>
+                        <p class="text-gray-600 text-sm">No conforto do seu lar, com toda comodidade</p>
+                    </div>
+
+                    <!-- Passo 4 -->
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            4
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Acompanhamento</h3>
+                        <p class="text-gray-600 text-sm">Relatórios detalhados e continuidade do cuidado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER PADRONIZADO -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <p class="text-sm text-gray-300">Hello one 😊 todos os direitos reservados</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-cyan-300 text-sm">helihealth@gmail.com</p>
+                    <p class="text-cyan-300 text-sm">📍 (11) 99492-0521</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-blue-600 font-bold text-sm">H1</span>
+                    </div>
+                    <span class="text-white text-sm font-semibold">HelioOne</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Menu Mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+            });
+
+            // Fechar menu ao clicar em um link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

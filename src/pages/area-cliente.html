@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente - HelioOne</title>
+    <link href="../../dist/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .menu-mobile {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-mobile.open {
+            transform: translateX(0);
+        }
+        .agendamento-card {
+            transition: all 0.3s ease;
+        }
+        .agendamento-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- HEADER PADRONIZADO -->
+    <header class="fixed w-full top-0 z-50">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-blue-800/80"></div>
+        
+        <nav class="relative z-10 container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-2xl">
+                        <span class="text-blue-600 font-bold text-xl">H1</span>
+                    </div>
+                    <span class="text-white text-2xl font-bold drop-shadow-lg">HelioOne</span>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Início</a>
+                    <a href="sobre.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Sobre Nós</a>
+                    <a href="servicos.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Serviços</a>
+                    <a href="agendamento.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Agendamento</a>
+                    <a href="contato.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Contato</a>
+                    <a href="area-cliente.html" class="text-white border-b-2 border-cyan-300 hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Área do Cliente</a>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <button id="mobileMenuButton" class="md:hidden text-white text-2xl bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    ☰
+                </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="menu-mobile md:hidden absolute top-24 left-0 w-full bg-blue-800/95 backdrop-blur-lg border-t border-blue-600/30 py-6 px-6">
+                <div class="flex flex-col space-y-6">
+                    <a href="index.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Início</a>
+                    <a href="sobre.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Sobre Nós</a>
+                    <a href="servicos.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Serviços</a>
+                    <a href="agendamento.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Agendamento</a>
+                    <a href="contato.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Contato</a>
+                    <a href="area-cliente.html" class="text-cyan-300 text-lg font-semibold border-b border-blue-600/30 pb-3">Área do Cliente</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-6">
+            <!-- Cabeçalho da Área do Cliente -->
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Olá, <span id="nomeUsuario">Usuário</span>!</h1>
+                <p class="text-gray-600">Gerencie seus agendamentos e informações pessoais</p>
+            </div>
+
+            <!-- Cards de Resumo -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                    <div class="text-3xl text-blue-600 mb-2">📅</div>
+                    <h3 class="font-semibold text-gray-800">Agendamentos Ativos</h3>
+                    <p id="totalAgendamentos" class="text-2xl font-bold text-blue-600">0</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                    <div class="text-3xl text-green-600 mb-2">✅</div>
+                    <h3 class="font-semibold text-gray-800">Confirmados</h3>
+                    <p id="totalConfirmados" class="text-2xl font-bold text-green-600">0</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                    <div class="text-3xl text-orange-600 mb-2">⏳</div>
+                    <h3 class="font-semibold text-gray-800">Pendentes</h3>
+                    <p id="totalPendentes" class="text-2xl font-bold text-orange-600">0</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Coluna 1: Agendamentos -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800">Meus Agendamentos</h2>
+                            <a href="agendamento.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold text-sm">
+                                + Novo Agendamento
+                            </a>
+                        </div>
+
+                        <div id="listaAgendamentos" class="space-y-4">
+                            <!-- Agendamentos serão carregados aqui -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Perfil e Ações Rápidas -->
+                <div class="space-y-6">
+                    <!-- Perfil do Usuário -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Meu Perfil</h2>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="text-sm text-gray-600">Nome</label>
+                                <p id="perfilNome" class="font-semibold">-</p>
+                            </div>
+                            <div>
+                                <label class="text-sm text-gray-600">E-mail</label>
+                                <p id="perfilEmail" class="font-semibold">-</p>
+                            </div>
+                            <div>
+                                <label class="text-sm text-gray-600">Telefone</label>
+                                <p id="perfilTelefone" class="font-semibold">-</p>
+                            </div>
+                        </div>
+                        <button id="editarPerfil" class="w-full mt-4 bg-gray-100 text-gray-800 py-2 rounded-lg hover:bg-gray-200 transition duration-300 font-medium">
+                            Editar Perfil
+                        </button>
+                    </div>
+
+                    <!-- Ações Rápidas -->
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Ações Rápidas</h2>
+                        <div class="space-y-3">
+                            <a href="agendamento.html" class="block w-full bg-blue-50 text-blue-700 py-3 px-4 rounded-lg hover:bg-blue-100 transition duration-300 font-medium text-center">
+                                📅 Fazer Novo Agendamento
+                            </a>
+                            <a href="servicos.html" class="block w-full bg-green-50 text-green-700 py-3 px-4 rounded-lg hover:bg-green-100 transition duration-300 font-medium text-center">
+                                🏥 Ver Serviços
+                            </a>
+                            <a href="contato.html" class="block w-full bg-purple-50 text-purple-700 py-3 px-4 rounded-lg hover:bg-purple-100 transition duration-300 font-medium text-center">
+                                📞 Falar com Atendimento
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Logout -->
+                    <button id="logout" class="w-full bg-red-600 text-white py-3 rounded-xl hover:bg-red-700 transition duration-300 font-semibold shadow-lg">
+                        Sair da Conta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER PADRONIZADO -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <p class="text-sm text-gray-300">Hello one 😊 todos os direitos reservados</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-cyan-300 text-sm">helihealth@gmail.com</p>
+                    <p class="text-cyan-300 text-sm">📍 (11) 99492-0521</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                        <span class="text-blue-600 font-bold text-sm">H1</span>
+                    </div>
+                    <span class="text-white text-sm font-semibold">HelioOne</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+
+            // Verificar se o usuário está logado
+            const usuarioLogado = JSON.parse(localStorage.getItem('helione_usuario_logado'));
+            if (!usuarioLogado) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Carregar dados do usuário
+            document.getElementById('nomeUsuario').textContent = usuarioLogado.nome;
+            document.getElementById('perfilNome').textContent = usuarioLogado.nome;
+            document.getElementById('perfilEmail').textContent = usuarioLogado.email;
+            document.getElementById('perfilTelefone').textContent = usuarioLogado.telefone;
+
+            // Carregar agendamentos do usuário
+            function carregarAgendamentos() {
+                const agendamentos = JSON.parse(localStorage.getItem('helione_agendamentos') || '[]');
+                const agendamentosUsuario = agendamentos.filter(a => a.email === usuarioLogado.email);
+
+                // Atualizar resumo
+                document.getElementById('totalAgendamentos').textContent = agendamentosUsuario.length;
+                document.getElementById('totalConfirmados').textContent = agendamentosUsuario.filter(a => a.status === 'confirmado').length;
+                document.getElementById('totalPendentes').textContent = agendamentosUsuario.filter(a => a.status === 'pendente').length;
+
+                // Ordenar agendamentos por data (mais recentes primeiro)
+                agendamentosUsuario.sort((a, b) => new Date(b.dataCriacao) - new Date(a.dataCriacao));
+
+                // Exibir agendamentos
+                const listaAgendamentos = document.getElementById('listaAgendamentos');
+                listaAgendamentos.innerHTML = '';
+
+                if (agendamentosUsuario.length === 0) {
+                    listaAgendamentos.innerHTML = `
+                        <div class="text-center py-8">
+                            <div class="text-6xl mb-4">📅</div>
+                            <p class="text-gray-600 mb-4">Nenhum agendamento encontrado</p>
+                            <a href="agendamento.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold">
+                                Fazer Primeiro Agendamento
+                            </a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                agendamentosUsuario.forEach(agendamento => {
+                    const servicoNomes = {
+                        'clinico_geral': 'Clínico Geral',
+                        'cardiologista': 'Cardiologista',
+                        'ortopedista': 'Ortopedista',
+                        'fisioterapia': 'Fisioterapia'
+                    };
+
+                    const statusConfig = {
+                        'pendente': { cor: 'bg-orange-100 text-orange-800', texto: 'Pendente' },
+                        'confirmado': { cor: 'bg-green-100 text-green-800', texto: 'Confirmado' }
+                    };
+
+                    const status = statusConfig[agendamento.status] || statusConfig.pendente;
+
+                    const agendamentoCard = document.createElement('div');
+                    agendamentoCard.className = 'agendamento-card bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition duration-300';
+                    agendamentoCard.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold text-gray-800">${servicoNomes[agendamento.servico]}</h3>
+                                <p class="text-gray-600 text-sm">${agendamento.data} às ${agendamento.horario}</p>
+                                <p class="text-gray-600 text-sm">${agendamento.endereco}</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span class="${status.cor} px-2 py-1 rounded-full text-xs font-medium">${status.texto}</span>
+                                <button class="text-red-600 hover:text-red-800 text-sm font-medium cancelar-agendamento" data-id="${agendamento.id}">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    listaAgendamentos.appendChild(agendamentoCard);
+                });
+
+                // Adicionar event listeners para cancelar
+                document.querySelectorAll('.cancelar-agendamento').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const agendamentoId = this.getAttribute('data-id');
+                        cancelarAgendamento(agendamentoId);
+                    });
+                });
+            }
+
+            // Função para cancelar agendamento
+            function cancelarAgendamento(id) {
+                if (!confirm('Tem certeza que deseja cancelar este agendamento?')) {
+                    return;
+                }
+
+                const agendamentos = JSON.parse(localStorage.getItem('helione_agendamentos') || '[]');
+                const agendamentoIndex = agendamentos.findIndex(a => a.id == id);
+
+                if (agendamentoIndex !== -1) {
+                    agendamentos.splice(agendamentoIndex, 1);
+                    localStorage.setItem('helione_agendamentos', JSON.stringify(agendamentos));
+                    carregarAgendamentos();
+                    alert('Agendamento cancelado com sucesso!');
+                }
+            }
+
+            // Logout
+            document.getElementById('logout').addEventListener('click', function() {
+                localStorage.removeItem('helione_usuario_logado');
+                window.location.href = 'index.html';
+            });
+
+            // Editar Perfil (simulação)
+            document.getElementById('editarPerfil').addEventListener('click', function() {
+                alert('Funcionalidade de edição de perfil será implementada em breve!');
+            });
+
+            // Inicializar
+            carregarAgendamentos();
+        });
+    </script>
+</body>
+</html>
