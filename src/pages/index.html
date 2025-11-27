@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,106 +10,146 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;700" />
     <span class="material-symbols-rounded">volume_up</span>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;500;700&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;500;700&display=swap" />
 
 
     <style>
         .icon-pulse:hover {
             animation: pulse 1s ease-in-out;
         }
+
         .icon-heartbeat:hover {
             animation: heartbeat 1s ease-in-out;
         }
+
         .icon-rotate:hover {
             animation: rotate 1s ease-in-out;
         }
+
         @keyframes pulse {
-            0%, 100% { transform: scale(1) translateY(0); }
-            50% { transform: scale(1.1) translateY(-5px); }
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0);
+            }
+
+            50% {
+                transform: scale(1.1) translateY(-5px);
+            }
         }
+
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.15); }
-            50% { transform: scale(1.1); }
-            75% { transform: scale(1.15); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.15);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            75% {
+                transform: scale(1.15);
+            }
         }
+
         @keyframes rotate {
-            0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(10deg) scale(1.1); }
-            100% { transform: rotate(0deg) scale(1); }
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(10deg) scale(1.1);
+            }
+
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
         }
-
-
     </style>
 </head>
+
 <body class="font-sans bg-white">
     <!-- HEADER COM IMAGEM DE PROFISSIONAIS + PELÍCULA AZUL VISÍVEL -->
-  <!-- HEADER CORRIGIDO -->
-<header class="fixed w-full top-0 z-50">
-    <!-- Mantém o resto do header igual -->
-    <!-- Imagem de fundo - Profissionais de saúde VISÍVEL -->
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-    
-    <!-- PELÍCULA AZUL FORTE E VISÍVEL -->
-    <div class="absolute inset-0 bg-blue-800/70"></div>
-    
-    <nav class="relative z-10 container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-2xl">
-                    <span class="text-blue-600 font-bold text-xl">H1</span>
-                </div>
-                <span class="text-white text-2xl font-bold drop-shadow-lg">HelioOne</span>
-            </div>
-
-            <!-- Menu Desktop -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Início</a>
-                <a href="/src/pages/sobre.html" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Sobre Nós</a>
-                <a href="#" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Serviços</a>
-                <a href="#" class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Contato</a>
-                <a href="login.html" class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área do Cliente</a>
-            </div>
-
-            <!-- Botão Agendar -->
-            <div class="hidden md:block">
-                <a 
-                 href="agendamento.html"
-                  class="inline-block bg-white text-blue-600 px-6 py-3 rounded-xl hover:bg-cyan-50 transition duration-300 font-semibold mt-4">
-                  Agendar Consulta
-                </a>
-            </div>
-
-            <!-- Menu Mobile -->
-            <button class="md:hidden text-white text-2xl bg-white/20 p-2 rounded-lg backdrop-blur-sm">
-                ☰
-            </button>
+    <!-- HEADER CORRIGIDO -->
+    <header class="fixed w-full top-0 z-50">
+        <!-- Mantém o resto do header igual -->
+        <!-- Imagem de fundo - Profissionais de saúde VISÍVEL -->
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center">
         </div>
-    </nav>
-</header>
+
+        <!-- PELÍCULA AZUL FORTE E VISÍVEL -->
+        <div class="absolute inset-0 bg-blue-800/70"></div>
+
+        <nav class="relative z-10 container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!--LOGO-->
+                <img src="/src/assets/images/logoh.png.PNG" alt="HelioOne - Cuidados Médicos Domiciliares"
+                    class="max-h-16 md:max-h-20 w-auto object-contain" onerror="this.style.display='none'">
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#"
+                        class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Início</a>
+                    <a href="/src/pages/sobre.html"
+                        class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Sobre
+                        Nós</a>
+                    <a href="#"
+                        class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Serviços</a>
+                    <a href="#"
+                        class="text-white hover:text-cyan-200 transition duration-300 font-semibold text-lg drop-shadow-md">Contato</a>
+                    <a href="login.html"
+                        class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área
+                        do Cliente</a>
+                </div>
+
+                <!-- Botão Agendar -->
+                <div class="hidden md:block">
+                    <a href="agendamento.html"
+                        class="inline-block bg-white text-blue-600 px-6 py-3 rounded-xl hover:bg-cyan-50 transition duration-300 font-semibold mt-4">
+                        Agendar Consulta
+                    </a>
+                </div>
+
+                <!-- Menu Mobile -->
+                <button class="md:hidden text-white text-2xl bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+                    ☰
+                </button>
+            </div>
+        </nav>
+    </header>
     <!-- HERO SECTION -->
     <main class="pt-32 pb-20 relative">
         <!-- Gradiente de fundo -->
         <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-cyan-50 to-white z-0"></div>
-        
+
         <section class="relative z-10 container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                    Cuidado Médico que 
-                    <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Honra Histórias</span>
+                    Cuidado Médico que
+                    <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Honra
+                        Histórias</span>
                 </h1>
-                
+
                 <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-                    Tecnologia avançada e cuidado humanizado para idosos. 
-                    <span class="font-semibold text-blue-600">Mais que atendimento, uma missão</span> inspirada no legado do Hélio.
+                    Tecnologia avançada e cuidado humanizado para idosos.
+                    <span class="font-semibold text-blue-600">Mais que atendimento, uma missão</span> inspirada no
+                    legado do Hélio.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-                    <button class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-10 py-4 rounded-xl hover:from-blue-700 hover:to-cyan-600 transition duration-300 font-semibold text-lg shadow-2xl hover:shadow-blue-500/30 transform hover:scale-105">
+                    <button
+                        class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-10 py-4 rounded-xl hover:from-blue-700 hover:to-cyan-600 transition duration-300 font-semibold text-lg shadow-2xl hover:shadow-blue-500/30 transform hover:scale-105">
                         Agendar Primeira Consulta
                     </button>
-                    <button class="border-2 border-blue-600 text-blue-600 px-10 py-4 rounded-xl hover:bg-blue-600 hover:text-white transition duration-300 font-semibold text-lg">
+                    <button
+                        class="border-2 border-blue-600 text-blue-600 px-10 py-4 rounded-xl hover:bg-blue-600 hover:text-white transition duration-300 font-semibold text-lg">
                         Conheça Nossa História
                     </button>
                 </div>
@@ -116,21 +157,24 @@
                 <!-- CARDS INTERATIVOS MELHORADOS -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                     <!-- Card 1 - Com animação de estetoscópio -->
-                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-blue-100 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 group cursor-pointer">
+                    <div
+                        class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-blue-100 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 group cursor-pointer">
                         <div class="text-4xl mb-4 icon-pulse group-hover:text-blue-600 transition-colors">🩺</div>
                         <h3 class="font-semibold text-gray-800 mb-2 text-lg">Atendimento Domiciliar</h3>
                         <p class="text-gray-600">Conforto e segurança no seu lar</p>
                     </div>
 
                     <!-- Card 2 - Com animação de coração -->
-                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-cyan-100 hover:shadow-2xl hover:border-cyan-300 transition-all duration-500 group cursor-pointer">
+                    <div
+                        class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-cyan-100 hover:shadow-2xl hover:border-cyan-300 transition-all duration-500 group cursor-pointer">
                         <div class="text-4xl mb-4 icon-heartbeat group-hover:text-cyan-600 transition-colors">💙</div>
                         <h3 class="font-semibold text-gray-800 mb-2 text-lg">Tecnologia Avançada</h3>
                         <p class="text-gray-600">Equipamentos de última geração</p>
                     </div>
 
                     <!-- Card 3 - Com animação de rotação -->
-                    <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-blue-100 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 group cursor-pointer">
+                    <div
+                        class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-blue-100 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 group cursor-pointer">
                         <div class="text-4xl mb-4 icon-rotate group-hover:text-green-600 transition-colors">⚕️</div>
                         <h3 class="font-semibold text-gray-800 mb-2 text-lg">Profissionais Renomados</h3>
                         <p class="text-gray-600">Especialistas comprometidos</p>
@@ -145,26 +189,30 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                    Por Trás de Cada Cuidado, uma 
-                    <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">História de Amor</span>
+                    Por Trás de Cada Cuidado, uma
+                    <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">História de
+                        Amor</span>
                 </h2>
-                
+
                 <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-cyan-500/20">
                     <p class="text-xl md:text-2xl leading-relaxed mb-6 text-cyan-100">
-                        "Nosso avô Hélio nos ensinou que <span class="font-semibold text-white">dignidade não tem idade</span>. 
+                        "Nosso avô Hélio nos ensinou que <span class="font-semibold text-white">dignidade não tem
+                            idade</span>.
                         Sua história nos motiva a garantir que nenhum idoso precise buscar ajuda sozinho."
                     </p>
-                    
+
                     <div class="flex justify-center items-center space-x-8 mt-8">
                         <div class="text-center">
-                            <div class="w-20 h-20 bg-cyan-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg">
+                            <div
+                                class="w-20 h-20 bg-cyan-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg">
                                 [A]
                             </div>
                             <p class="font-semibold">Arthur Uzum</p>
                             <p class="text-cyan-300 text-sm">Co-fundador</p>
                         </div>
                         <div class="text-center">
-                            <div class="w-20 h-20 bg-blue-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg">
+                            <div
+                                class="w-20 h-20 bg-blue-400 rounded-full mx-auto mb-3 flex items-center justify-center text-white font-bold text-lg">
                                 [C]
                             </div>
                             <p class="font-semibold">Cristiano Thiago</p>
@@ -178,33 +226,35 @@
 
     <!-- FOOTER -->
     <!-- FOOTER REDUZIDO -->
-<!-- FOOTER REDUZIDO E MELHOR DISTRIBUÍDO -->
-<footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <!-- Direitos autorais -->
-            <div class="text-center md:text-left">
-                <p class="text-sm text-gray-300">Hello one 😊 todos os direitos reservados</p>
-            </div>
-            
-            <!-- Contatos -->
-            <div class="text-center">
-                <p class="text-cyan-300 text-sm">helihealth@gmail.com</p>
-                <p class="text-cyan-300 text-sm">📍 (11) 99492-0521</p>
-            </div>
-            
-            <!-- Logo reduzida -->
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                    <span class="text-blue-600 font-bold text-sm">H1</span>
+    <!-- FOOTER REDUZIDO E MELHOR DISTRIBUÍDO -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <!-- Direitos autorais -->
+                <div class="text-center md:text-left">
+                    <p class="text-sm text-gray-300">Hello one 😊 todos os direitos reservados</p>
                 </div>
-                <span class="text-white text-sm font-semibold">HelioOne</span>
+
+                <!-- Contatos -->
+                <div class="text-center">
+                    <p class="text-cyan-300 text-sm">helihealth@gmail.com</p>
+                    <p class="text-cyan-300 text-sm">📍 (11) 99492-0521</p>
+                </div>
+
+                <!-- Logo reduzida -->
+                  <img src="/src/assets/images/logoh.png.PNG" alt="HelioOne" class="max-h-8 md:max-h-10 w-auto object-contain"
+            onerror="this.style.display='none'">
+        <!-- Opcional: manter o texto se quiser -->
+        <!-- <span class="text-white text-sm font-semibold hidden md:block">HelioOne</span> -->
+
             </div>
         </div>
+    </footer>
+    <div class="flex items-center space-x-2">
     </div>
-</footer>
 
-<script src="../js/accessibility-menu.js"></script>
+    <script src="../js/accessibility-menu.js"></script>
 
 </body>
+
 </html>
