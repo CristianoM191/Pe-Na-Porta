@@ -2,7 +2,6 @@
 /* Importações globais - CAMINHO CORRETO */
 @import './globals/variables.css';
 
-
 /* Tailwind */
 @tailwind base;
 @tailwind components;
@@ -65,4 +64,31 @@
     outline: 3px solid var(--helio-primary-light);
     outline-offset: 4px;
   }
+  /* Fade in simples */
+  .fade-in {
+    @apply opacity-0;
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Slide diagonal do topo direito */
+  .slide-diagonal {
+    @apply opacity-0;
+    transform: translate(50px, -50px);
+    animation: slideDiagonal 1s forwards;
+  }
+
+  @keyframes slideDiagonal {
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
 }
+.slide-diagonal.delay-1200 { animation-delay: 0.69s; }
+.slide-diagonal.delay-1450 { animation-delay: 0.95s; }

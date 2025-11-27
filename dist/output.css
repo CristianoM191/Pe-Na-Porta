@@ -1880,12 +1880,52 @@ body.contrast .btn-primary {
   transition-duration: 150ms;
 }
 
+.delay-700 {
+  transition-delay: 700ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
 }
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+/* Fade in simples */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide diagonal do topo direito */
+
+.slide-diagonal {
+  opacity: 0;
+  transform: translate(50px, -50px);
+  animation: slideDiagonal 1s forwards;
+}
+
+@keyframes slideDiagonal {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.slide-diagonal.delay-1200 {
+  animation-delay: 0.69s;
+}
+
+.slide-diagonal.delay-1450 {
+  animation-delay: 0.95s;
 }
 
 .hover\:scale-105:hover {
