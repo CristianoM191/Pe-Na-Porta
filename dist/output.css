@@ -1,5 +1,7 @@
 /* Importações globais - CAMINHO CORRETO */
 
+/* Importações globais - CAMINHO CORRETO */
+
 /* Variáveis CSS para a HelioOne - Preparadas para troca de temas */
 
 :root {
@@ -26,6 +28,27 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
+}
+
+/* MODO CONTRASTE AVANÇADO */
+
+.contrast {
+  /* Fundo geral */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  /* Paleta vibrante estilo tech neon */
+  --helio-primary: #00eaff;
+  /* ciano neon */
+  --helio-primary-dark: #0099cc;
+  --helio-primary-light: #66f5ff;
+  --helio-accent: #4d7dff;
+  /* azul neon */
+  /* Cinzas de alto contraste */
+  --helio-gray-light: #e5e5e5;
+  --helio-gray-dark: #cccccc;
+  /* Gradientes neon */
+  --gradient-hero: linear-gradient(135deg, #00eaff 0%, #4d7dff 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(0, 234, 255, 0.25) 0%, rgba(77, 125, 255, 0.25) 100%);
 }
 
 /* Tailwind */
@@ -584,14 +607,22 @@ video {
   display: none;
 }
 
-html {
-  font-family: 'Inter', system-ui, sans-serif;
-  scroll-behavior: smooth;
+body {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
-body {
-  background-color: var(--helio-white);
-  color: var(--helio-gray-dark);
+/* Links ficam neon */
+
+a {
+  color: var(--helio-primary);
+}
+
+a:hover {
+  color: var(--helio-accent);
 }
 
 .container {
@@ -628,6 +659,23 @@ body {
   }
 }
 
+body.contrast .btn-primary {
+  --tw-shadow: 0 0 15px rgba(0,234,255,0.8);
+  --tw-shadow-colored: 0 0 15px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+body.contrast .btn-primary:hover {
+  --tw-shadow: 0 0 25px rgba(77,125,255,1);
+  --tw-shadow-colored: 0 0 25px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+body.contrast .btn-primary {
+  background: var(--gradient-hero);
+  border-color: var(--helio-primary-light);
+}
+
 .fixed {
   position: fixed;
 }
@@ -648,16 +696,32 @@ body {
   inset: 0px;
 }
 
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
 .left-0 {
   left: 0px;
+}
+
+.left-3 {
+  left: 0.75rem;
 }
 
 .left-4 {
   left: 1rem;
 }
 
+.right-3 {
+  right: 0.75rem;
+}
+
 .right-4 {
   right: 1rem;
+}
+
+.right-6 {
+  right: 1.5rem;
 }
 
 .top-0 {
@@ -761,6 +825,10 @@ body {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -805,6 +873,10 @@ body {
   width: 3rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -831,6 +903,10 @@ body {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[calc\(100\%-1\.5rem\)\] {
+  width: calc(100% - 1.5rem);
 }
 
 .w-full {
@@ -902,6 +978,10 @@ body {
   align-items: baseline;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -916,6 +996,10 @@ body {
 
 .gap-12 {
   gap: 3rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-3 {
@@ -990,6 +1074,12 @@ body {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rounded {
@@ -1496,6 +1586,11 @@ body {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1724,6 +1819,12 @@ body {
   transition-duration: 150ms;
 }
 
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
 }
@@ -1731,8 +1832,6 @@ body {
 .duration-500 {
   transition-duration: 500ms;
 }
-
-/* Estilos customizados */
 
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
@@ -1779,6 +1878,11 @@ body {
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-gray-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-gray-600:hover {
@@ -1834,6 +1938,11 @@ body {
 .hover\:text-cyan-200:hover {
   --tw-text-opacity: 1;
   color: rgb(165 243 252 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-gray-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-red-800:hover {
@@ -1917,6 +2026,18 @@ body {
 }
 
 @media (min-width: 768px) {
+  .md\:bottom-24 {
+    bottom: 6rem;
+  }
+
+  .md\:left-auto {
+    left: auto;
+  }
+
+  .md\:right-6 {
+    right: 1.5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1927,6 +2048,18 @@ body {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
+  }
+
+  .md\:w-16 {
+    width: 4rem;
+  }
+
+  .md\:w-64 {
+    width: 16rem;
   }
 
   .md\:grid-cols-2 {
@@ -1949,6 +2082,10 @@ body {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .md\:rounded-2xl {
+    border-radius: 1rem;
   }
 
   .md\:p-12 {

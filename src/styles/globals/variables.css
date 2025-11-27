@@ -27,3 +27,24 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
 }
+
+/* MODO CONTRASTE AVANÇADO */
+.contrast {
+  /* Fundo geral */
+  --bg-color: #000000;
+  --text-color: #ffffff;
+
+  /* Paleta vibrante estilo tech neon */
+  --helio-primary: #00eaff; /* ciano neon */
+  --helio-primary-dark: #0099cc;
+  --helio-primary-light: #66f5ff;
+  --helio-accent: #4d7dff; /* azul neon */
+
+  /* Cinzas de alto contraste */
+  --helio-gray-light: #e5e5e5;
+  --helio-gray-dark: #cccccc;
+
+  /* Gradientes neon */
+  --gradient-hero: linear-gradient(135deg, #00eaff 0%, #4d7dff 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(0, 234, 255, 0.25) 0%, rgba(77, 125, 255, 0.25) 100%);
+}

@@ -1,30 +1,68 @@
 /* Importações globais - CAMINHO CORRETO */
+/* Importações globais - CAMINHO CORRETO */
 @import './globals/variables.css';
+
 
 /* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos customizados */
+
 @layer base {
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
-  
   body {
-    background-color: var(--helio-white);
-    color: var(--helio-gray-dark);
+    @apply transition-all duration-300;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  /* Links ficam neon */
+  a {
+    color: var(--helio-primary);
+  }
+  a:hover {
+    color: var(--helio-accent);
   }
 }
 
+
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105;
+
+    background: var(--gradient-hero);
+    color: var(--helio-white);
+    border: 2px solid transparent;
   }
-  
+
+  body.contrast .btn-primary {
+    @apply shadow-[0_0_15px_rgba(0,234,255,0.8)] hover:shadow-[0_0_25px_rgba(77,125,255,1)];
+
+    background: var(--gradient-hero);
+    border-color: var(--helio-primary-light);
+  }
+
   .glass-effect {
-    @apply backdrop-blur-md bg-white/10 border border-white/20;
+    @apply backdrop-blur-md border border-white/20;
+    background: var(--gradient-glass);
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
+  }
+
+  .outline-contrast {
+    outline: 3px solid var(--helio-primary-light);
+    outline-offset: 4px;
   }
 }
