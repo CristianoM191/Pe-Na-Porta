@@ -107,6 +107,40 @@
                     <a href="login.html"
                         class="text-white text-lg font-semibold hover:text-cyan-200 transition duration-300 border-b border-blue-600/30 pb-3">Área
                         do Cliente</a>
+                    <!-- 🔔 BOTÃO DE NOTIFICAÇÕES SIMPLES -->
+                    <div class="relative">
+                        <button id="botao-notificacoes-teste"
+                            class="relative p-2 text-white hover:text-cyan-200 transition duration-300">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span id="badge-notificacoes-teste"
+                                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                        </button>
+
+                        <!-- PAINEL SIMPLES -->
+                        <div id="painel-notificacoes-teste"
+                            class="fixed top-20 right-6 w-80 bg-white rounded-lg shadow-2xl border border-gray-200 z-50 hidden">
+                            <div class="p-4 border-b border-gray-100 bg-blue-50 rounded-t-lg">
+                                <h3 class="font-semibold text-gray-800">Notificações</h3>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
+                                    <i class="fas fa-calendar-check text-blue-600 mt-1"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Consulta Confirmada</p>
+                                        <p class="text-gray-600 text-sm">Sua consulta está confirmada para 15/01</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 mt-2">
+                                    <i class="fas fa-pills text-red-600 mt-1"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm">Lembrete de Medicação</p>
+                                        <p class="text-gray-600 text-sm">Tome sua medicação às 20:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIM DO BOTÃO DE NOTIFICAÇÕES -->
                 </div>
 
                 <!-- Botão Agendar -->
@@ -133,13 +167,15 @@
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight fade-in delay-300 ">
                     Cuidado Médico que
-                    <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent slide-diagonal delay-700">Honra
+                    <span
+                        class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent slide-diagonal delay-700">Honra
                         Histórias</span>
                 </h1>
 
                 <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto fade-in delay-500">
                     Tecnologia avançada e cuidado humanizado para idosos.
-                    <span class="font-semibold text-blue-600 fade-in delay-500">Mais que atendimento, uma missão</span> inspirada no
+                    <span class="font-semibold text-blue-600 fade-in delay-500">Mais que atendimento, uma missão</span>
+                    inspirada no
                     legado do Hélio.
                 </p>
 
@@ -203,10 +239,10 @@
 
                     <div class="flex justify-center items-center space-x-8 mt-8">
                         <div class="text-center">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- FOOTER -->
@@ -227,10 +263,10 @@
                 </div>
 
                 <!-- Logo reduzida -->
-                  <img src="/src/assets/images/logoh.png.PNG" alt="HelioOne" class="max-h-8 md:max-h-10 w-auto object-contain"
-            onerror="this.style.display='none'">
-        <!-- Opcional: manter o texto se quiser -->
-        <!-- <span class="text-white text-sm font-semibold hidden md:block">HelioOne</span> -->
+                <img src="/src/assets/images/logoh.png.PNG" alt="HelioOne"
+                    class="max-h-8 md:max-h-10 w-auto object-contain" onerror="this.style.display='none'">
+                <!-- Opcional: manter o texto se quiser -->
+                <!-- <span class="text-white text-sm font-semibold hidden md:block">HelioOne</span> -->
 
             </div>
         </div>
@@ -239,6 +275,40 @@
     </div>
 
     <script src="../js/accessibility-menu.js"></script>
+
+    <!-- ✅ SISTEMA DE NOTIFICAÇÕES CORRETO -->
+    <script>
+// Sistema SIMPLES de notificações - 100% funcional
+document.addEventListener('DOMContentLoaded', function() {
+    const botao = document.getElementById('botao-notificacoes-teste');
+    const painel = document.getElementById('painel-notificacoes-teste');
+    
+    if (botao && painel) {
+        botao.addEventListener('click', function(e) {
+            e.stopPropagation();
+            painel.classList.toggle('hidden');
+        });
+        
+        // Fechar ao clicar fora
+        document.addEventListener('click', function() {
+            painel.classList.add('hidden');
+        });
+        
+        // Não fechar ao clicar dentro do painel
+        painel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        console.log('✅ Notificações carregadas!');
+    }
+});
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </body>
 

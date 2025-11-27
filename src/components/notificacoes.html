@@ -1,0 +1,43 @@
+<!-- Sistema de Notificações -->
+<div id="sistema-notificacoes" class="relative">
+    <!-- Botão do Bell com Badge -->
+    <button id="botao-notificacoes" class="relative p-2 text-white hover:text-cyan-200 transition duration-300">
+        <i class="fas fa-bell text-xl"></i>
+        <span id="badge-notificacoes" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+    </button>
+
+    <!-- Painel de Notificações -->
+    <div id="painel-notificacoes" class="fixed top-20 right-6 w-96 bg-white rounded-lg shadow-2xl border border-gray-200 z-50 hidden transform transition-all duration-300 opacity-0 scale-95">
+        <!-- Cabeçalho -->
+        <div class="flex justify-between items-center p-4 border-b border-gray-100 bg-blue-50 rounded-t-lg">
+            <h3 class="font-semibold text-gray-800 text-lg">Notificações</h3>
+            <div class="flex space-x-2">
+                <button id="marcar-todas-lidas" class="text-blue-600 hover:text-blue-800 text-sm font-medium transition duration-300">
+                    Marcar todas como lidas
+                </button>
+                <button id="fechar-notificacoes" class="text-gray-500 hover:text-gray-700 transition duration-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Lista de Notificações -->
+        <div id="lista-notificacoes" class="max-h-96 overflow-y-auto">
+            <!-- Notificações serão carregadas via JavaScript -->
+            <div class="p-8 text-center text-gray-500" id="sem-notificacoes">
+                <i class="fas fa-bell-slash text-3xl mb-3 text-gray-300"></i>
+                <p>Nenhuma notificação</p>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="p-3 border-t border-gray-100 bg-gray-50 rounded-b-lg text-center">
+            <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium transition duration-300">
+                Ver todas as notificações
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
